@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RPS Game dApp</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Rock–Paper–Scissors</h1>
+    <button id="connectBtn">Connect Wallet</button>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Deployments</h2>
+      <div>
+        <label>RPS Address</label>
+        <input id="rpsAddress" placeholder="0x..." />
+        <button id="loadRps">Load</button>
+      </div>
+      <div class="note">Use the deploy script and paste the printed address here.</div>
+    </section>
+
+    <section class="card">
+      <h2>Create Game</h2>
+      <div class="row">
+        <label>Opponent</label>
+        <input id="opponent" placeholder="0x..." />
+      </div>
+      <div class="row">
+        <label>Stake (ETH)</label>
+        <input id="stake" placeholder="0.1" />
+      </div>
+      <div class="row">
+        <label>Your Move</label>
+        <select id="move">
+          <option value="0">Rock</option>
+          <option value="1">Paper</option>
+          <option value="2">Scissors</option>
+        </select>
+      </div>
+      <div class="row">
+        <label>Salt</label>
+        <input id="salt" placeholder="random hex or leave blank" />
+      </div>
+      <button id="createGame">Create + Commit</button>
+      <div class="note">Remember the salt to reveal later!</div>
+    </section>
+
+    <section class="card">
+      <h2>Join & Commit</h2>
+      <div class="row">
+        <label>Game ID</label>
+        <input id="gameIdJoin" />
+      </div>
+      <div class="row">
+        <label>Your Move</label>
+        <select id="moveJoin">
+          <option value="0">Rock</option>
+          <option value="1">Paper</option>
+          <option value="2">Scissors</option>
+        </select>
+      </div>
+      <div class="row">
+        <label>Salt</label>
+        <input id="saltJoin" placeholder="random hex or leave blank" />
+      </div>
+      <button id="joinCommit">Join + Commit</button>
+    </section>
+
+    <section class="card">
+      <h2>Reveal</h2>
+      <div class="row">
+        <label>Game ID</label>
+        <input id="gameIdReveal" />
+      </div>
+      <div class="row">
+        <label>Your Move</label>
+        <select id="moveReveal">
+          <option value="0">Rock</option>
+          <option value="1">Paper</option>
+          <option value="2">Scissors</option>
+        </select>
+      </div>
+      <div class="row">
+        <label>Salt</label>
+        <input id="saltReveal" />
+      </div>
+      <button id="reveal">Reveal</button>
+      <button id="claimTimeout">Claim Timeout</button>
+    </section>
+
+    <section class="card">
+      <h2>Game Info</h2>
+      <div class="row">
+        <label>Game ID</label>
+        <input id="gameIdInfo" />
+      </div>
+      <button id="fetchInfo">Fetch</button>
+      <pre id="infoOut"></pre>
+    </section>
+  </main>
+
+  <footer>
+    <span id="status">Disconnected</span>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

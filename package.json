@@ -1,0 +1,22 @@
+{
+  "name": "game-smart-contracts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smart contracts for a simple on-chain game (Rock-Paper-Scissors) with an ERC20 in-game token.",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "clean": "hardhat clean",
+  "deploy": "hardhat run scripts/deploy.js",
+  "serve": "npx http-server ./frontend -p 8080 -c-1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.10"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
+  "dotenv": "^16.4.5",
+  "http-server": "^14.1.1"
+  }
+}
